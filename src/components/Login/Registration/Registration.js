@@ -35,6 +35,7 @@ const Registration = () => {
             </form>
             <div className="google-signIn">
             <p>Already have an acount <Link to="/login">Login</Link> </p>
+            <p className="ms-4">or</p>
             <button onClick={googleSignIn}>
                 <img src={google} alt="" />
             </button>

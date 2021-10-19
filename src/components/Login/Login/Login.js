@@ -37,7 +37,7 @@ const Login = () => {
             </form>
             <div className="google-signIn">
                 <p>New User ? <Link to="/registration">Registration</Link></p>
-                <p>Or</p>
+                <p className="ms-4">Or</p>
 
                 <button onClick={handleGoogleLogin}>
                     <img src={google} alt="" />
