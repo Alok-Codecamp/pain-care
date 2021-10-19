@@ -10,6 +10,7 @@ const useFirebase=()=>{
     const [user,setUser]=useState({});
     const [error, setError]=useState("")
     const [isLoading, setIsLoading]=useState(true);
+    const [userName,setUserName]=useState("");
     const auth=getAuth();
 
     const registration=(email,password)=>{
@@ -21,11 +22,8 @@ const useFirebase=()=>{
     const googleSignIn=()=>{
         setIsLoading(true);
         const googleProvider=new GoogleAuthProvider();
-        signInWithPopup(auth,googleProvider)
-        .then(result=>{
-            setUser(result.user)
-        })
-        .finally(()=>setIsLoading(false))
+       return signInWithPopup(auth,googleProvider)
+       
     }
 
     useEffect(()=>{
@@ -61,6 +59,7 @@ const useFirebase=()=>{
     return {
 
         user,
+        setUser,
         googleSignIn,
         LogOut,
         processLogin,
@@ -71,6 +70,8 @@ const useFirebase=()=>{
         email,
         password,
         isLoading,
+        userName,
+        setUserName,
         
     }
 

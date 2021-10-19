@@ -6,7 +6,7 @@ import useAuth from '../../../Hooks/useAuth'
 import './Registration.css'
 const Registration = () => {
    
-    const {user,email,password,processLogin,registration,setEmail,setPassword,googleSignIn}=useAuth();
+    const {user,email,password,processLogin,registration,setEmail,setPassword,googleSignIn, setUserName}=useAuth();
     const handleEmail=(e)=>{
         setEmail(e.target.value)
     }
@@ -17,6 +17,9 @@ const Registration = () => {
         e.preventDefault();
       registration(email,password)
     }
+    const getName=(e)=>{
+        setUserName(e.target.value)
+    }
     return (
         <div>
             <div className="registration-text">
@@ -24,7 +27,7 @@ const Registration = () => {
             <p>Pain care and make your life easy</p>
             </div>
             <form className="registration-from" onSubmit={handleSignInWithEmail}>
-                <input type="text" placeholder="First name" />
+                <input onBlur={getName} type="text" placeholder="First name" />
                 <input type="text" placeholder="Last name" />
                 <input onBlur={handleEmail} type="email" placeholder="email" />
                 <input onBlur={handlePassword} type="password" placeholder="password" />

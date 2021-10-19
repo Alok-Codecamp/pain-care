@@ -13,6 +13,7 @@ const OurServices = () => {
             console.log(error.massage)
         })
     },[])
+    
     return (
         <div>
             <h2 className="explore-service">Explore Our all Services</h2>

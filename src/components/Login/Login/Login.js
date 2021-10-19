@@ -1,20 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import useFirebase from '../../../Hooks/useFirebase';
 import google from '../../../image/Icon/google-icon.svg';
 import './Login.css'
 const Login = () => {
-    const {user,processLogin,email,password,setPassword,setEmail,googleSignIn}=useAuth();
-    const handleEmail=(e)=>{
+    const location = useLocation();
+    const history=useHistory();
+    const { user, processLogin, email, password, setPassword, setEmail, googleSignIn,setIsLoading,setUser } = useAuth();
+    const handleEmail = (e) => {
         setEmail(e.target.value);
-   }
-   const handlepassword=(e)=>{
-       setPassword(e.target.value);
-   }
-    const handleLogin=(e)=>{
+    }
+    const handlepassword = (e) => {
+        setPassword(e.target.value);
+    }
+    const handleLogin = (e) => {
         e.preventDefault();
-        processLogin(email,password);
+        processLogin(email, password);
+    }
+    const redirect_uri=location.state?.from||'/home';
+    const handleGoogleLogin=()=>{
+       googleSignIn()
+       .then(result=>{
+       setUser(result.user)
+        history.push(redirect_uri)
+    })
+    .finally(()=>setIsLoading(false))
     }
     return (
         <div className="login-form-container">
@@ -25,12 +36,12 @@ const Login = () => {
                 <input type="submit" />
             </form>
             <div className="google-signIn">
-            <p>New User ? <Link to="/registration">Registration</Link></p>
-            <p>Or</p>
+                <p>New User ? <Link to="/registration">Registration</Link></p>
+                <p>Or</p>
 
-            <button onClick={googleSignIn}>
-                <img src={google} alt="" />
-            </button>
+                <button onClick={handleGoogleLogin}>
+                    <img src={google} alt="" />
+                </button>
             </div>
 
         </div>

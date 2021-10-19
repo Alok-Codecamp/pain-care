@@ -6,7 +6,7 @@ import useAuth from '../../../Hooks/useAuth';
 import useFirebase from '../../../Hooks/useFirebase';
 import './NavBar.css'
 const NavBar = () => {
-  const {user,LogOut,isLogin}=useAuth();
+  const {user,LogOut,isLoading,userNmae,}=useAuth();
  
     return (
        <>
@@ -28,7 +28,9 @@ const NavBar = () => {
       }
       
       <Navbar.Text>
-      {user&& <p>{user.displayName}</p>}
+      
+        {user&&<p>{user.displayName}</p>}
+      
       </Navbar.Text>
     </Navbar.Collapse>
     </Container>
