@@ -1,0 +1,26 @@
+.contact{
+    background-color: white;
+    color:#24278D ;
+}
+.contact i{
+    font-size: 40px;
+}
+.icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(26, 23, 23);
+    height:100px;
+}
+.icon img{
+    width:50px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width:688px) {
+    .contact{
+        flex-direction: column;
+    }
+    
+}

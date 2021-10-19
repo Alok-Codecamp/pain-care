@@ -1,0 +1,20 @@
+.nav-link{
+    color: lightblue !important;
+}
+.nav-link:hover{
+    color: white;
+    text-decoration:3px solid underline;
+}
+
+.logo{
+    color:lightblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+
+}
+.logo sup{
+    font-size: 30px;
+    position: fixed;
+    top: 18px;
+
+}

@@ -1,0 +1,20 @@
+.service-container{
+    border-radius: 15px;
+}
+.service-container:hover{
+    box-shadow:1px 1px 1px 2px gray;
+
+}
+
+.image{
+    height: 50%;
+    border-radius: 15px;
+}
+
+a{
+    color:green;
+    text-decoration: none;
+}
+a:hover{
+    color: green;
+}
