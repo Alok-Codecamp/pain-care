@@ -9,7 +9,7 @@ const useFirebase=()=>{
     const [password, setPassword]=useState("");
     const [user,setUser]=useState({});
     const [error, setError]=useState("")
-    const [isLoading, setIsLoading]=useState(false);
+    const [isLoading, setIsLoading]=useState(true);
     const auth=getAuth();
 
     const registration=(email,password)=>{
@@ -50,10 +50,12 @@ const useFirebase=()=>{
         .finally(()=>setIsLoading(false))
  }
  const LogOut=()=>{
+     setIsLoading(true)
      signOut(auth)
      .then(()=>{
          setUser({});
      })
+     .finally(()=>setIsLoading(false))
  }
 
     return {
