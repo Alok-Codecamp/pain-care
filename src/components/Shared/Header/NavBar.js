@@ -12,7 +12,7 @@ const NavBar = () => {
        <>
      <Navbar  bg="dark" collapseOnSelect expand="lg" variant="dark" sticky="top">
     <Container>
-    <Navbar.Brand href="#home"><h3 className="logo">Pain Care</h3></Navbar.Brand>
+    <Navbar.Brand as={HashLink} to="/home"><h3 className="logo">Pain Care</h3></Navbar.Brand>
     <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end">
     <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
