@@ -1,12 +1,13 @@
 import React from 'react';
-
+import img from '.././../image/Banner/about.jpg'
 const About = () => {
     return (
         <div>
             <div className="banner">
-
+                <img style={{height:"400px"}} src={img} alt="" />
             </div>
-            <div className="about-us">
+            <div className="about-us container border border-2 mt-5 mb-5">
+                <h1>know About us </h1>
                 <p>
                 Pain Solutions offers state-of-the-art minimally invasive pain treatments at three locations in Nashua, Gilford, and Concord, New Hampshire. James Mirazita, MD, and PK Suchdev, MD, treat chronic pain conditions, including lower back pain, neck pain, headaches, complex regional pain syndrome (CRPS), cancer pain, fibromyalgia, and many other types of persistent and debilitating pain. 
 
