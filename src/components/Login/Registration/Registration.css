@@ -1,0 +1,49 @@
+
+.registration-text{
+    margin-top: 8%;
+    background-color:cadetblue;
+    color:whitesmoke;
+    width:40%;
+    text-align: left;
+    padding-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.registration-from{
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.registration-from input{
+        margin-top: 30px;
+        outline: 1px solid gray;
+
+}
+.google-signIn{
+    display: flex;
+    justify-content:center;
+    margin-top: 20px;
+
+
+}
+.google-signIn button{
+    margin-left: 20px;
+    width: 50px;
+    height: 30px;
+    border: none;
+    background-color:lightgray;
+}
+.google-signIn button img{
+    width: 100%;
+    position: relative;
+    bottom: 285px;
+}

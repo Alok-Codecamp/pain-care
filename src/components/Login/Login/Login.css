@@ -1,0 +1,37 @@
+.login-form-container h3{
+    background-color: cadetblue;
+    color: whitesmoke;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    border-radius: 5px;
+    padding:10px;
+    
+}
+
+.login-form{
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding:20px;
+    border-radius: 5px;
+
+}
+
+.login-form input{
+    margin-bottom: 25px;
+    outline: 1px solid gray;
+}
+
+.login-form-container p{
+    margin-bottom:8%;
+}
+.login-form-container p a{
+    text-decoration: none;
+}

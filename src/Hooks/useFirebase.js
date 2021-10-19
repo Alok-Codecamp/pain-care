@@ -1,13 +1,15 @@
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,onAuthStateChanged,
+    signInWithPopup, GoogleAuthProvider} from "firebase/auth";
+import { useEffect, useState } from "react";
 import initializeFirebase from "../firebase/firebase.init";
 
 initializeFirebase();
 const useFirebase=()=>{
-    
+    const [email, setEmail]=useState();
+    const [password, setPassword]=useState("");
     const [user,setUser]=useState({});
     const [error, setError]=useState("")
-    const [isLogin, setIsLogin]=useState(false);
+    const [isLoading, setIsLoading]=useState(false);
     const auth=getAuth();
 
     const registration=(email,password)=>{
@@ -16,23 +18,57 @@ const useFirebase=()=>{
             console.log(result.user);
         })
     }
+    const googleSignIn=()=>{
+        setIsLoading(true);
+        const googleProvider=new GoogleAuthProvider();
+        signInWithPopup(auth,googleProvider)
+        .then(result=>{
+            setUser(result.user)
+        })
+        .finally(()=>setIsLoading(false))
+    }
+
+    useEffect(()=>{
+        const unsubscribe=onAuthStateChanged(auth,(user)=>{
+            if(user){
+                setUser(user)
+            }
+            else{
+                setUser({})
+            }
+            setIsLoading(false)
+        })
+    },[])
 
     const processLogin=(email, password)=>{
+        setIsLoading(true)
         signInWithEmailAndPassword(auth, email,password)
         .then(result=>{
           setUser(result.user);
           console.log(user);
         })
-        .catch(error=>{
-          setError(error.message);
-        })
+        .finally(()=>setIsLoading(false))
+ }
+ const LogOut=()=>{
+     signOut(auth)
+     .then(()=>{
+         setUser({});
+     })
  }
 
     return {
+
         user,
+        googleSignIn,
+        LogOut,
         processLogin,
+        setIsLoading,
         registration,
-        isLogin,
+        setEmail,
+        setPassword,
+        email,
+        password,
+        isLoading,
         
     }
 
