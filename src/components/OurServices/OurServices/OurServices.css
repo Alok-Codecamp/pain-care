@@ -1,0 +1,13 @@
+.our-services{
+    margin-top: 40px;
+}
+.explore-service{
+    background-color: cadetblue;
+    color: whitesmoke;
+    width: 60%;
+    height: 50px;
+    margin-top: 50px;
+    padding-left: 20px;
+    position: sticky;
+    top: 0;
+}

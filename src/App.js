@@ -10,6 +10,7 @@ import Registration from './components/Login/Registration/Registration';
 import AuthProvider from './contexts/contexts';
 import Detail from './components/Detail/Detail';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import OurServices from './components/OurServices/OurServices/OurServices';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
          <PrivateRoute path="/detail/:serviceId">
            <Detail></Detail>
            </PrivateRoute>
+           <PrivateRoute path="/ourService">
+              <OurServices></OurServices>
+             </PrivateRoute>
         <Route path="*">
           <NotFound></NotFound>
         </Route>
