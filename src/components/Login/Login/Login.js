@@ -33,7 +33,7 @@ const Login = () => {
             <form onSubmit={handleLogin} className="login-form" action="">
                 <input onBlur={handleEmail} type="email" placeholder="Email" />
                 <input onBlur={handlepassword} type="password" placeholder="password" />
-                <input type="submit" />
+                <input type="submit"/>
             </form>
             <div className="google-signIn">
                 <p>New User ? <Link to="/registration">Registration</Link></p>

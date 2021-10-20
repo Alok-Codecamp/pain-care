@@ -9,8 +9,8 @@ import img6 from '../../image/doctors/dev.jfif';
 
 const Doctor = () => {
     return (
-        <div className="doctor-container">
-            <div className="row doctor">
+        <div className="doctor-container ">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img1} alt="" />
                 </div>
@@ -22,7 +22,7 @@ const Doctor = () => {
                     <button className="btn btn-success">call now</button>
                 </div>
             </div>
-            <div className="row doctor">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img3} alt="" />
                 </div>
@@ -34,7 +34,7 @@ const Doctor = () => {
                     <button className="btn btn-success">call now</button>
                 </div>
             </div>
-            <div className="row doctor">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img2} alt="" />
                 </div>
@@ -47,7 +47,7 @@ const Doctor = () => {
                     <button className="btn btn-success">call now</button>
                 </div>
             </div>
-            <div className="row doctor">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img4} alt="" />
                 </div>
@@ -60,7 +60,7 @@ const Doctor = () => {
                     <button className="btn btn-success">call now</button>
                 </div>
             </div>
-            <div className="row doctor">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img5} alt="" />
                 </div>
@@ -73,7 +73,7 @@ const Doctor = () => {
                     <button className="btn btn-success">call now</button>
                 </div>
             </div>
-            <div className="row doctor">
+            <div className="row doctor mt-5 ms-auto me-auto">
                 <div className="img col-4">
                     <img src={img6} alt="" />
                     </div>
